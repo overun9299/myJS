@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组练习</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+    function Person(name , age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.toString = function () {
+        return "Person[name="+this.name+",age="+this.age+"]";
+    }
+
+    //创建一个Person对象
+    var per = new Person("孙悟空",18);
+    var per2 = new Person("猪八戒",28);
+    var per3 = new Person("红孩儿",8);
+    var per4 = new Person("蜘蛛精",16);
+    var per5 = new Person("二郎神",38);
+
+    var Persons = [per,per2,per3,per4,per5];
+
+    // 创建一个函数，可以将perArr中的满18岁的Person提取出来
+    function get18(arrays) {
+        var arrays18 = new Array();
+        for (var i = 0 ; i< arrays.length ; i++) {
+            if (arrays[i].age >= 18) {
+                arrays18.push(arrays[i]);
+            }
+        }
+        return arrays18;
+    }
+
+    var result = get18(Persons);
+
+    console.log(result)
+
+</script>
+</html>
