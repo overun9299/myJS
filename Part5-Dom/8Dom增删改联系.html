@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .myTable {
+            width: 421px;
+            height: 298px;
+            background-color: antiquewhite;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .myTable td{
+
+            width: 101px;
+            height: 33px;
+            text-align: center;
+
+            border-bottom: 1px solid #999;
+
+            border-right: 1px solid #999;
+
+        }
+        .myTable table{
+            /*去掉单元格间隙*/
+            border-top: 1px solid #999;
+
+            border-left: 1px solid #999;
+
+            border-spacing: 0px;/*去掉单元格间隙*/
+        }
+
+        .myTable table thead td {
+            background-color: #d1aaee;
+        }
+
+
+        /*输入框*/
+        .myInput {
+            width: 421px;
+            height: 300px;
+            background-color: aqua;
+            margin: 50px auto;
+        }
+
+        .myInput ul {
+            padding-top: 31px;
+            list-style: none;
+
+        }
+        .myInput li {
+            height: 40px;
+            width: 100%;
+            /*background-color: #d1aaee;*/
+            font-size: 28px;
+            line-height: 40px;
+
+        }
+        .myInput li input {
+            height: 27px;
+            vertical-align:middle;
+            margin-top: -5px;
+        }
+
+        .myInput li span {
+            padding-right: 20px;
+        }
+        .clearfix::before , .clearfix::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        .adds {
+            width: 90px;
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="myMain">
+        <div class="myTable">
+            <table>
+                <thead>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>操作</td>
+                </thead>
+                <tr>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>18502545574</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>18502545574</td>
+                    <td></td>
+                </tr>
+
+
+            </table>
+
+        </div>
+        <div class="myInput" class="clearfix">
+            <ul>
+                <li>
+                    <span>姓名:</span><input id="name" name="name"/>
+                </li>
+                <li>
+                    <span>性别:</span><input name="sex" type="radio" value="男"/>男<input name="sex" type="radio" value="女"/>女
+                </li>
+                <li>
+                    <span>电话:</span><input id="phone" name="phone"/>
+                </li>
+            </ul>
+
+            <button class="adds" id="adds">添加</button>
+
+        </div>
+
+
+    </div>
+</body>
+
+
+<script type="text/javascript">
+    let adds = document.querySelector(".adds");
+    adds.onclick = function () {
+        let name = document.querySelector("#name");
+        console.log(name.value);
+        sex = document.querySelectorAll("#sex");
+        console.log(sex.length)
+        let phone = document.querySelector("#phone");
+        console.log(phone.value)
+    }
+
+</script>
+</html>

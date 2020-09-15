@@ -33,21 +33,45 @@
 			//向MyClass的原型中添加一个方法
 			MyClass.prototype.sayHello = function(){
 				alert("hello");
+				return 1;
 			};
 			
 			var mc = new MyClass();
 			
 			var mc2 = new MyClass();
 			
-			//console.log(MyClass.prototype);
-			//console.log(mc2.__proto__ == MyClass.prototype);
-			
+			// console.log(MyClass.prototype);
+			// console.log(mc2.__proto__ == MyClass.prototype);
+			// console.log(mc2.__proto__.sayHello());
+
 			//向mc中添加a属性
 			mc.a = "我是mc中的a";
 			
 			//console.log(mc2.a);
 			
-			mc.sayHello();
+			// mc.sayHello();
+
+
+			function Person(){
+				this.name;
+			}
+			Person.prototype.say=function(){
+				console.log("hello");
+			}
+
+			var person=new Person();
+
+			console.log(Person.__proto__);
+			console.log(Function.prototype);
+
+			console.log(Person.prototype.__proto__);
+			console.log(Object.prototype);
+
+			console.log(person.__proto__);
+			console.log(Person.prototype);
+
+			console.log(Person.prototype.constructor);
+			console.log(Person);
 			
 			
 		</script>

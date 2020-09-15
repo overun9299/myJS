@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .myChackBox {
+            width: 100%;
+        }
+        .myChackBox span{
+            display: block;
+            width: 320px;
+            text-align: center;
+            font-size: 26px;
+            margin: 50px auto 20px;
+            border: 1px solid tan;
+            border-radius: 20px;
+            background-color: aqua;
+            box-shadow: 2px 2px antiquewhite;
+        }
+        .myInput {
+            font-size: 26px;
+            display: block;
+            width: 400px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            /*background-color: aqua;*/
+            margin: 0 auto;
+        }
+
+        .myButtom {
+
+            width: 450px;
+            /*background-color: aqua;*/
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .myButtom button {
+            width: 91px;
+            height: 40px;
+            border: 1px solid tan;
+            border-radius: 20px;
+            margin-left: 10px;
+            background-color: #d1aaee;
+        }
+
+        .myButtom button:last-child {
+            background-color: #af45f8;
+        }
+
+        .myButtom button:hover {
+            background-color: aqua;
+        }
+        .myButtom button:focus {
+            outline: 0;
+        }
+        .myButtom button:active {
+            box-shadow: 2px 2px antiquewhite;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="myChackBox">
+        <span>你喜欢哪种球类</span>
+        <form action="#">
+            <div class="myInput">
+                <input type="checkbox" name="sport" value="足球">足球</input>
+                <input type="checkbox" name="sport" value="乒乓球">乒乓球</input>
+                <input type="checkbox" name="sport" value="篮球">篮球</input>
+                <input type="checkbox" name="sport" value="棒球">棒球</input>
+            </div>
+            <div class="myButtom">
+                <button id="selectAll" type="button">全选</button>
+                <button id="selectNot" type="button">全不选</button>
+                <button id="selectOther" type="button">反选</button>
+                <button id="submits" type="button">提交</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    // 全选
+    let all = document.getElementsByName("sport");
+    let selectAll = document.getElementById(`selectAll`);
+    selectAll.onclick = function() {
+        checkAll(true);
+    }
+
+    // 全不选
+    let selectNot = document.getElementById(`selectNot`);
+    selectNot.onclick = function() {
+        checkAll(false);
+    }
+
+    function checkAll(bools) {
+        for (var i = 0 ; i< all.length ; i++) {
+            all[i].checked = bools;
+        }
+    }
+
+
+    // 反选
+    let selectOther = document.getElementById(`selectOther`);
+    selectOther.onclick = function () {
+        for (var i = 0 ; i< all.length ; i++) {
+            all[i].checked = !all[i].checked;
+        }
+    }
+
+
+    // 提交
+    let submits = document.getElementById(`submits`);
+    submits.onclick = function () {
+        var checkEd = new Array();
+        for (var i = 0 ; i< all.length ; i++) {
+            if (all[i].checked) {
+                checkEd.push(all[i].value)
+            }
+        }
+        alert(checkEd);
+    }
+
+</script>
+
+
+</html>
