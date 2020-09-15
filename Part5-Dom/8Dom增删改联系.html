@@ -88,7 +88,7 @@
 <body>
     <div class="myMain">
         <div class="myTable">
-            <table>
+            <table id="god">
                 <thead>
                 <td>姓名</td>
                 <td>性别</td>
@@ -137,12 +137,23 @@
 <script type="text/javascript">
     let adds = document.querySelector(".adds");
     adds.onclick = function () {
-        let name = document.querySelector("#name");
-        console.log(name.value);
-        sex = document.querySelectorAll("#sex");
-        console.log(sex.length)
-        let phone = document.querySelector("#phone");
-        console.log(phone.value)
+        let name = document.querySelector("#name").value;
+        let sex = document.getElementsByName("sex");
+        let sexEnd;
+        if (sex[0].checked) {
+            sexEnd = '男'
+        } else {
+            sexEnd = '女'
+        }
+        let phone = document.querySelector("#phone").value;
+
+        let elementById = document.getElementById("god");
+        elementById.innerHTML += "<tr>\n" +
+            "                    <td>"+ name +"</td>\n" +
+            "                    <td>"+ sexEnd +"</td>\n" +
+            "                    <td>"+ phone +"</td>\n" +
+            "                    <td></td>\n" +
+            "                </tr>"
     }
 
 </script>
