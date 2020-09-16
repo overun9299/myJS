@@ -23,12 +23,35 @@
 <script type="text/javascript">
 
     let box1 = document.querySelector(".box1");
-    document.onmousemove = function (event) {
-        console.log(event.clientX)
-        console.log(event.clientY)
-        box1.style.left = event.pageX+"px";
-        box1.style.top = document.body.scrollTop+event.pageY+"px";
+
+    let box1X = 50;
+    let box1Y = 50;
+    // document.onmousemove = function (event) {
+    //     console.log(event.clientX)
+    //     console.log(event.clientY)
+    //     box1.style.left = event.pageX+"px";
+    //     box1.style.top = document.body.scrollTop+event.pageY+"px";
+    // }
+    box1.onmousedown = function (event) {
+        box1X = event.offsetX;
+        box1Y = event.offsetY;
+
+        document.onmousemove = function (event) {
+
+            box1.style.left = (event.pageX-box1X)+"px";
+            box1.style.top = (event.pageY-box1Y)+"px";
+        }
+
+        document.onmouseup = function (event) {
+
+            // 同时取消两个事件
+            document.onmousemove = null;
+            document.onmouseup = null;
+
+        }
     }
+
+
 
 
 
