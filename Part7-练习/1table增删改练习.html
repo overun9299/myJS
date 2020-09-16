@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .myTable {
+            width: 421px;
+            height: 298px;
+            background-color: antiquewhite;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .myTable td{
+
+            width: 101px;
+            height: 33px;
+            text-align: center;
+
+            border-bottom: 1px solid #999;
+
+            border-right: 1px solid #999;
+
+        }
+        .myTable table{
+            /*去掉单元格间隙*/
+            border-top: 1px solid #999;
+
+            border-left: 1px solid #999;
+
+            border-spacing: 0px;/*去掉单元格间隙*/
+        }
+
+        .myTable table thead td {
+            background-color: #d1aaee;
+        }
+
+
+        /*输入框*/
+        .myInput {
+            width: 421px;
+            height: 300px;
+            background-color: aqua;
+            margin: 50px auto;
+        }
+
+        .myInput ul {
+            margin-top: 20px;
+            padding-top: 31px;
+            list-style: none;
+
+        }
+        .myInput li {
+            height: 40px;
+            width: 100%;
+            /*background-color: #d1aaee;*/
+            font-size: 28px;
+            line-height: 40px;
+
+        }
+        .myInput li input {
+            height: 27px;
+            vertical-align:middle;
+            margin-top: -5px;
+        }
+
+        .myInput li span {
+            padding-right: 20px;
+        }
+        .clearfix::before , .clearfix::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        .adds {
+            width: 90px;
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="myMain">
+        <div class="myTable">
+            <table id="god">
+                <thead>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>操作</td>
+                </thead>
+                <tr>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>18502545574</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>女</td>
+                    <td>18502542274</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+
+
+            </table>
+
+        </div>
+        <div class="myInput clearfix">
+            <ul>
+                <li>
+                    <span>姓名:</span><input id="name" name="name"/>
+                </li>
+                <li>
+                    <span>性别:</span><input name="sex" type="radio" value="男"/>男<input name="sex" type="radio" value="女"/>女
+                </li>
+                <li>
+                    <span>电话:</span><input id="phone" name="phone"/>
+                </li>
+            </ul>
+
+            <button class="adds" id="adds">添加</button>
+
+        </div>
+
+
+    </div>
+</body>
+
+
+<script type="text/javascript">
+    let elementNodeListOf = document.querySelectorAll('*[name="sex"]');
+    console.log(elementNodeListOf);
+
+
+    let adds = document.querySelector(".adds");
+    adds.onclick = function () {
+        let name = document.querySelector("#name").value;
+        let sex = document.getElementsByName("sex");
+        let sexEnd;
+        if (sex[0].checked) {
+            sexEnd = '男'
+        } else {
+            sexEnd = '女'
+        }
+        let phone = document.querySelector("#phone").value;
+
+        let elementById = document.getElementById("god");
+        elementById.innerHTML += "<tr>\n" +
+            "                    <td>"+ name +"</td>\n" +
+            "                    <td>"+ sexEnd +"</td>\n" +
+            "                    <td>"+ phone +"</td>\n" +
+            "                    <td><a href=\"javascript:;\">删除</a></td>\n" +
+            "                </tr>"
+
+        let allA = document.querySelectorAll("#god a");
+        console.log(allA)
+        for (var i=0 ; i<allA.length ; i++) {
+            allA[i].onclick = function () {
+                //获取当前tr
+                var tr = this.parentNode.parentNode;
+                //获取要删除的员工的名字
+                //var name = tr.getElementsByTagName("td")[0].innerHTML;
+                var name = tr.children[0].innerHTML;
+
+                //删除之前弹出一个提示框
+                /*
+                 * confirm()用于弹出一个带有确认和取消按钮的提示框
+                 * 	需要一个字符串作为参数，该字符串将会作为提示文字显示出来
+                 * 如果用户点击确认则会返回true，如果点击取消则返回false
+                 */
+                var flag = confirm("确认删除"+name+"吗?");
+
+                //如果用户点击确认
+                if(flag){
+                    //删除tr
+                    tr.parentNode.removeChild(tr);
+                }
+
+                /*
+                 * 点击超链接以后，超链接会跳转页面，这个是超链接的默认行为，
+                 * 	但是此时我们不希望出现默认行为，可以通过在响应函数的最后return false来取消默认行为
+                 */
+                return false;
+            }
+
+        }
+    }
+
+
+
+</script>
+</html>
