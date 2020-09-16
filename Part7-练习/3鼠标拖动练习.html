@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>鼠标拖动练习</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #af45f8;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-$END$
+        <div class="box1">
+
+        </div>
 </body>
+
+
+<script type="text/javascript">
+
+    let box1 = document.querySelector(".box1");
+    document.onmousemove = function (event) {
+        console.log(event.clientX)
+        console.log(event.clientY)
+        box1.style.left = event.pageX+"px";
+        box1.style.top = document.body.scrollTop+event.pageY+"px";
+    }
+
+
+
+</script>
 </html>

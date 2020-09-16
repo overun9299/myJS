@@ -8,5 +8,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/7zip-min" level="application" />
+    <orderEntry type="library" name="@types/jquery-animate-scroll" level="application" />
+    <orderEntry type="library" name="@types/javascript-astar" level="application" />
+    <orderEntry type="library" name="@types/bardjs" level="application" />
+    <orderEntry type="library" name="scriPT.US" level="application" />
+    <orderEntry type="library" name="JQ" level="application" />
   </component>
 </module>

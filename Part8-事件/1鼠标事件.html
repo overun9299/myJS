@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>鼠标事件</title>
+
+    <style>
+
+        .box1 {
+            width: 711px;
+            height: 159px;
+            background-color: #bfa;
+            margin: 50px auto;
+            border: 2px solid darkblue;
+        }
+
+        .box2 {
+            width: 711px;
+            height: 20px;
+            background-color: #bfa;
+            margin: 50px auto;
+            border: 1px solid darkblue;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+    <div class="box1"></div>
+    <div class="box2"></div>
 </body>
+
+
+<script type="text/javascript">
+
+    let box1 = document.querySelector(".box1");
+    let box2 = document.querySelector(".box2");
+
+
+
+    /*
+		 * onmousemove
+		 * 	- 该事件将会在鼠标在元素中移动时被触发
+		 *
+		 * 事件对象
+		 * 	- 当事件的响应函数被触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数,
+		 * 		在事件对象中封装了当前事件相关的一切信息，比如：鼠标的坐标  键盘哪个按键被按下  鼠标滚轮滚动的方向。。。
+		 */
+    box1.onmousemove = function (event) {
+
+        /*
+			 * clientX可以获取鼠标指针的水平坐标
+			 * cilentY可以获取鼠标指针的垂直坐标
+	    */
+
+        let x = event.clientX;
+        let y = event.clientY;
+
+        /*
+			 * offsetX可以获取鼠标指针在该窗口的水平坐标
+			 * offsetY可以获取鼠标指针在该窗口的垂直坐标
+	    */
+        let x1 = event.offsetX;
+        let y1 = event.offsetY;
+        box2.innerHTML = "X: "+ x +"   , Y: " + y + " --  this.X: "+ x1 +"  , this.Y: " + y1 + ""
+    }
+
+</script>
 </html>

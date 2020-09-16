@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+
+    <style>
+
+        #myP {
+            width: 299px;
+            height: 456px;
+            overflow: auto;
+            background-color: #bfa;
+            margin: 50px auto;
+        }
+
+        #myButt {
+            width: 299px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #myButt button {
+            margin-left: 44px;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+    <div class="box1">
+        <p id="myP">
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+            块级元素，默认占满一行，其他块级元素：常用的有：　div、p、ul、ol、li、dl、dt、dd、fieldset、form、h1~h6、hr、table
+            另外还有：address、isindex、menu、noframes、noscript、pre、blockquote、center、dir、
+
+        </p>
+        <div id="myButt">
+            <input type="radio" disabled="disabled"> 我已阅读改协议    <button disabled="disabled">确定</button>
+        </div>
+
+
+    </div>
 </body>
+
+
+<script type="text/javascript">
+
+    let myP = document.querySelector("#myP");
+    myP.onscroll = function () {
+        if (myP.scrollHeight - myP.scrollTop == myP.clientHeight) {
+            let myButt = document.querySelector("#myButt");
+            let childNodes = myButt.childNodes;
+            for (var  i = 0 ;i< childNodes.length ; i++) {
+                childNodes[i].disabled = false;
+            }
+
+        }
+    }
+
+</script>
 </html>
