@@ -33,6 +33,7 @@
     //     box1.style.top = document.body.scrollTop+event.pageY+"px";
     // }
     box1.onmousedown = function (event) {
+        //解决拖拽圆心
         box1X = event.offsetX;
         box1Y = event.offsetY;
 
@@ -42,7 +43,7 @@
             box1.style.top = (event.pageY-box1Y)+"px";
         }
 
-        document.onmouseup = function (event) {
+        document.onmouseup = function () {
 
             // 同时取消两个事件
             document.onmousemove = null;
