@@ -51,6 +51,19 @@
         }
     }
 
+    box1.onmouseover = function () {
+
+        box1.onmousewheel = function (event) {
+            if (event.wheelDelta > 0) {
+                box1.style.width = (box1.clientWidth + 5) +"px";
+                box1.style.height = (box1.clientHeight+ 5) +"px";
+            } else {
+                box1.style.width = (box1.clientWidth - 5) +"px";
+                box1.style.height = (box1.clientHeight - 5) +"px";
+            }
+        }
+    }
+
 
 
 
