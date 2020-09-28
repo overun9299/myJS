@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+
+    <div name="box2">
+
+    </div>
+
+    <div id="box3">
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+    $(function () {
+        console.log(123)
+
+        // 类选择器
+        let $box1 = $(".box1");
+        $box1.css({
+            width:"100px",
+            height:"100px",
+            backgroundColor:"red",
+
+        });
+        // 属性选择器
+        let $box2 = $("div[name='box2']");
+        $box2.css({
+            width:"150px",
+            height:"100px",
+            backgroundColor:"blue",
+        });
+        // id选择器
+        let $box3 = $("#box3");
+        $box3.css({
+            width:"150px",
+            height:"150px",
+            backgroundColor:"yellow",
+        });
+    })
+
+</script>
+</html>
