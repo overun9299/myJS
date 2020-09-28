@@ -25,9 +25,13 @@
             之所以能够监听, 是因为入口函数执行的时候ul就已经存在了, 所以能够添加事件
             之所以this是li,是因为我们点击的是li, 而li没有click事件, 所以事件冒泡传递给了ul,ul响应了事件, 既然事件是从li传递过来的,所以ul必然指定this是谁
             */
-            $("ul").delegate("li", "click", function () {
+            // $("ul").delegate("li", "click", function () {
+            //     console.log($(this).html());
+            // });
+
+            $("ul").on("click" ,"li", function () {
                 console.log($(this).html());
-            });
+            })
         });
     </script>
 </head>
