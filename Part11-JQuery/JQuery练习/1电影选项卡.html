@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1电影选项卡</title>
+    <script src="../JQuery基础/js/jquery-1.12.4.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            width: 300px;
+            height: 455px;
+            border: 1px solid gray;
+            margin: 150px auto;
+        }
+        .moviesUl {
+            list-style: none;
+        }
+        .moviesUl li {
+            border-bottom: 2px darkgray dashed;
+            height: 30px;
+            line-height: 30px;
+            transition: height 0.9s;
+            overflow: hidden;
+        }
+        .moviesUl li:first-child {
+            border-top: 2px darkgray dashed;
+            /*height: 153px;*/
+        }
+        .moviesUl li span {
+            display: inline-block;
+            background-color: #af45f8;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin: 0 10px;
+        }
+        .titleS {
+            font-size: 21px;
+            padding: 6px 6px 6px 8px;
+            color: firebrick;
+        }
+        .details {
+            height: 120px;
+            width: 290px;
+            /*background-color: #d1aaee;*/
+            margin: 0 auto;
+        }
+        .details img {
+            height: 120px;
+            float: left;
+        }
+        .details p {
+            width: 196px;
+            height: 120px;
+            float: right;
+            font-size: 8px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1 class="titleS">电影排行榜</h1>
+        <ul class="moviesUl">
+            <li>
+                <span>1</span>战狼Ⅱ
+                <!--<div class="details">-->
+                <!--    <img src="./img/zl.jpg" alt="">-->
+                <!--    <p>-->
+                <!--        简介：故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场-->
+                <!--    </p>-->
+                <!--</div>-->
+            </li>
+            <li><span class="sdf">2</span>钢铁侠Ⅲ</li>
+            <li><span>3</span>教父Ⅰ</li>
+            <li><span>4</span>I AM LENG</li>
+            <li><span>5</span>LION</li>
+            <li><span>6</span>GOD OF GUN</li>
+        </ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    $(function () {
+        $(".moviesUl").on("mouseenter" , "li" , function (ss) {
+            let details = $("<div class=\"details\">\n" +
+                "                    <img src=\"./img/zl.jpg\" alt=\"\">\n" +
+                "                    <p>\n" +
+                "                        简介：故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场\n" +
+                "                    </p>\n" +
+                "                </div>")
+            $(this).append(details)
+
+            $(this).css({
+                height:"153px",
+            })
+        })
+        $(".moviesUl").on("mouseleave" , "li" , function () {
+            $(this).children(".details").remove();
+            $(this).css({
+                height:"30px",
+            })
+        })
+    })
+
+</script>
+</html>
