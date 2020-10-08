@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab选项卡</title>
+
+    <script src="../JQuery基础/js/jquery-1.12.4.js"></script>
+
+    <style>
+
+        .title {
+            list-style: none;
+            display: flex;
+            width: 600px;
+            margin: 50px auto 0px;
+        }
+        .title li {
+            font-size: 5px;
+            width: 49px;
+            height: 36px;
+            line-height: 36px;
+            background-color: #af45f8;
+            flex-grow: 1;
+            text-align: center;
+        }
+        img {
+            width: 600px;
+        }
+
+        .imgs {
+            width: 600px;
+            list-style: none;
+            margin: 0 auto;
+            position: relative;
+        }
+        .imgs li{
+            position: absolute;
+            display: none;
+        }
+        .imgs .show {
+            display: block;
+        }
+        .title .current {
+            background-color: #bbffaa;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul class="title">
+    <li class="current">
+        H5+C3
+    </li>
+    <li>
+        jQuery
+    </li>
+    <li>
+        C语言
+    </li>
+    <li>
+        Go语言
+    </li>
+</ul>
+<ul class="imgs">
+    <li class="show"><img src="./img/11.jpg" alt=""></li>
+    <li><img src="./img/12.jpg" alt=""></li>
+    <li><img src="./img/13.jpg" alt=""></li>
+    <li><img src="./img/14.jpg" alt=""></li>
+</ul>
+
+
+</body>
+<script type="text/javascript">
+
+    $(function () {
+        $(".title li").mouseenter(function () {
+            $(this).addClass("current");
+            $(this).siblings().removeClass("current");
+            // 1.3获取当前移出选项卡的索引
+            var index = $(this).index();
+
+            let jQuery = $(".imgs li").eq(index);
+            jQuery.siblings().removeClass("show");
+            jQuery.addClass("show");
+        })
+    })
+</script>
+</html>

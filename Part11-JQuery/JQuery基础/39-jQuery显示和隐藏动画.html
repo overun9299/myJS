@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-jQuery显示和隐藏动画</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+        .bix1 {
+            width: 400px;
+            height: 400px;
+            background-color: #bbffaa;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div class="bix1">
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $("button").eq(0).click(function () {
+            $(".bix1").show(1000);
+        })
+        $("button").eq(1).click(function () {
+            $(".bix1").hide(1000);
+        })
+        //切换作用，如果显示就隐藏，如果隐藏就显示
+        $("button").eq(2).click(function () {
+            $("div").toggle(1000, function () {
+                alert("切换动画执行完毕");
+            });
+        });
+    })
+
+</script>
+</html>

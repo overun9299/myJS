@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <script src="../JQuery基础/js/jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .myUl {
+            width: 334px;
+            margin: 20px auto;
+            list-style: none;
+        }
+        .myUl > li {
+            width: 334px;
+            line-height: 43px;
+            background-color: #bbffaa;
+            border: 1px solid gold;
+            border-bottom: none;
+        }
+        .myUl > li:hover {
+            background-color: #d1aaee;
+        }
+        .myUl img {
+            float: right;
+            margin-top: 14px;
+            margin-right: 10px;
+        }
+        .myUl > li:last-child {
+            border-bottom: 1px solid gold;
+        }
+        .muSesUl {
+            list-style: none;
+            display: none;
+        }
+        .muSesUl > li {
+            background-color: #af45f8;
+            padding-left: 50px;
+            border: 1px solid gold;
+        }
+
+        .contt img {
+            transform: rotate(90deg);
+        }
+
+    </style>
+</head>
+<body>
+<ul class="myUl">
+    <li>
+        一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单  <span><img src="./img/arrow_right.png" alt=""></span>
+        <ul class="muSesUl">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+</ul>
+</body>
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".myUl li").click(function () {
+            console.log(!!$(this).attr("opened"))
+
+
+            if ($(this).attr("opened")) {
+                $(this).attr("opened",false);
+            } else {
+                $(this).attr("opened",true);
+            }
+            console.log(!!$(this).attr("opened"))
+            console.log($(this)[0].attributes)
+            // if (!$(this).attr("opened")) {
+            //     console.log("111")
+            //     $(this).children(".muSesUl").slideDown(500);
+            //     $(this).siblings().children(".muSesUl").slideUp(500);
+            //
+            //     $(this).addClass("contt").attr("opened",true);
+            //     $(this).siblings().removeClass("contt").removeAttr("opened");
+            // } else {
+            //     console.log("222")
+            //     $(this).children(".muSesUl").slideUp(500);
+            //     $(this).removeAttr("opened");
+            // }
+        })
+
+
+    })
+
+</script>
+</html>
