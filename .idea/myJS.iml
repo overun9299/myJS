@@ -14,5 +14,7 @@
     <orderEntry type="library" name="@types/bardjs" level="application" />
     <orderEntry type="library" name="scriPT.US" level="application" />
     <orderEntry type="library" name="JQ" level="application" />
+    <orderEntry type="library" name="@types/jquery" level="application" />
+    <orderEntry type="library" name="jQuery" level="application" />
   </component>
 </module>

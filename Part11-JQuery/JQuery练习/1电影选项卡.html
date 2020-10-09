@@ -21,7 +21,7 @@
         }
         .moviesUl li {
             border-bottom: 2px darkgray dashed;
-            height: 30px;
+            /*height: 30px;*/
             line-height: 30px;
             transition: height 0.9s;
             overflow: hidden;
@@ -48,7 +48,7 @@
             height: 120px;
             width: 290px;
             /*background-color: #d1aaee;*/
-            margin: 0 auto;
+            margin: 0 auto 3px;
         }
         .details img {
             height: 120px;
@@ -88,7 +88,31 @@
 <script type="text/javascript">
 
     $(function () {
-        $(".moviesUl").on("mouseenter" , "li" , function (ss) {
+        // 实现方式1
+
+        // $(".moviesUl").on("mouseenter" , "li" , function (ss) {
+        //     let details = $("<div class=\"details\">\n" +
+        //         "                    <img src=\"./img/zl.jpg\" alt=\"\">\n" +
+        //         "                    <p>\n" +
+        //         "                        简介：故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场\n" +
+        //         "                    </p>\n" +
+        //         "                </div>")
+        //     $(this).append(details)
+        //
+        //     // $(this).css({
+        //     //     height:"153px",
+        //     // })
+        // })
+        // $(".moviesUl").on("mouseleave" , "li" , function () {
+        //     $(this).children(".details").remove();
+        //     // $(this).css({
+        //     //     height:"30px",
+        //     // })
+        // })
+
+        // 实现方式2
+
+        $(".moviesUl li").hover(function () {
             let details = $("<div class=\"details\">\n" +
                 "                    <img src=\"./img/zl.jpg\" alt=\"\">\n" +
                 "                    <p>\n" +
@@ -96,16 +120,8 @@
                 "                    </p>\n" +
                 "                </div>")
             $(this).append(details)
-
-            $(this).css({
-                height:"153px",
-            })
-        })
-        $(".moviesUl").on("mouseleave" , "li" , function () {
+        }, function () {
             $(this).children(".details").remove();
-            $(this).css({
-                height:"30px",
-            })
         })
     })
 
