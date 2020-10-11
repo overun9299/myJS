@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.box1 {
+    width: 320px;
+    height: 480px;
+    margin: 90px auto;
+    /*background-color: #af45f8;*/
+    background: url("../images/game_bg.jpg");
+    position: relative;
+}
+.fenshu {
+    color: white;
+    padding-left: 62px;
+    padding-top: 6px;
+}
+.role {
+    display: inline-block;
+    width: 320px;
+    height: 20px;
+    background-color: gray;
+    color: black;
+    /*margin-top: 423px;*/
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.progress {
+    height: 16px;
+    width: 180px;
+    position: absolute;
+    left: 63px;
+    top: 66px;
+    background: url("../images/progress.png");
+    /*z-index: -1;*/
+}
+.rule {
+    width: 320px;
+    height: 480px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.endGame {
+    width: 320px;
+    height: 480px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.endGame .reStartGame {
+    background: linear-gradient(#4986ea, #0c51d9);
+}
+.rule p {
+    padding: 10px 60px;
+}
+.rule p:first-child {
+    padding-top: 99px;
+}
+.rule a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    padding-top: 30px;
+    color: #bbffaa;
+}
+.buttons{
+    display: block;
+    width: 151px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(#E55C3D,#C50000);
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    text-decoration: none;
+    bottom: 120px;
+    left: 50%;
+    margin-left: -75px;
+}
+.box1 .startGame {
+    display: block;
+}
+.endGame p{
+    padding-top: 150px;
+    color: #ff4500;
+    text-shadow: 3px 3px 0 #fff;
+    font-size: 54px;
+    padding-left: 10px;
+}
